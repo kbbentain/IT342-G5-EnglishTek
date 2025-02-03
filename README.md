@@ -1,6 +1,6 @@
 # Profile
 
-<br><strong>TEAM MEMBERS:</strong>
+<strong>TEAM MEMBERS:</strong>
 <br>KENJIE B. BENTAIN
 <br>KENT M. DELOS CIENTOS
 <br>STEVEN JAN TABUNGAR
@@ -8,4 +8,5 @@
 <br><strong>NAME:</strong> KENT M. DELOS CIENTOS
 <br><strong>COURSE & YEAR:</strong> BSIT-3
 <br>
-<h1><p>Hi, I am Kent M. Delos Cientos, BSIT 3rd Year, currently living and born here in Cebu City. Little about my self is that, I am approachable and friendly. I admire to be a Data Analyst or Web Developer, one day :D. Hobbies are games, reading, driving, reading, and listening to music. </p></h1>
+
+<p>Hi, I am Kent M. Delos Cientos, a BSIT 3rd Year student currently living in Cebu City. A little about myself: I am approachable and friendly. I aspire to be a Data Analyst or Web Developer one day :D. My hobbies include gaming, reading, driving, and listening to music.</p>
