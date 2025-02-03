@@ -6,21 +6,20 @@ KENJIE B. BENTAIN
 KENT DELOS CIENTOS
 STEVEN JAN TABUNGAR
 ```
+
 ## Name: 
 ```sh
-Steven Jan M. Tabungar
+KENJIE B. BENTAIN
 ```
-
 ## Course & Year: 
 ```sh
 BSIT-3
 ```
-
 ## Short Description About Myself:
 ```sh
-I'm a third-year college student with a passion for video games, often immersing myself in virtual worlds during my downtime. 
-I cherish spending time with friends, whether we're gaming together or exploring new places. 
-I also enjoy solo adventures, where I can unwind and discover new experiences on my own. 
-Food is a major part of my life; I love trying different cuisines and going on food trips to satisfy my culinary curiosity. 
-Balancing academics with my hobbies keeps me energized and excited about each day!
+Hi, I'm Kenjie Bentain, a 3rd-year BSIT student currently living in Carmen, Toledo City. 
+I am kind in action but harsh in thinking. 
+I spend most of my time playing online games and listening to music. 
+Every Saturday, I practice my bass guitar skills. 
+My dream job is to become a Quality Assurance specialis
 ```
