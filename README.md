@@ -12,7 +12,6 @@ Course & Year:
 BSIT-3
 ```
 
-<short description about yourself (5 sentences)>
 
 ```sh
 I'm a third-year college student with a passion for video games, often immersing myself in virtual worlds during my downtime. 
