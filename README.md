@@ -1,18 +1,22 @@
 # Profile
 
 ## Team Members:
-## Member1
-Name: 
+```sh
+KENJIE B. BENTAIN
+KENT DELOS CIENTOS
+STEVEN JAN TABUNGAR
+```
+## Name: 
 ```sh
 Steven Jan M. Tabungar
 ```
 
-Course & Year: 
+## Course & Year: 
 ```sh
 BSIT-3
 ```
 
-
+## Short Description About Myself:
 ```sh
 I'm a third-year college student with a passion for video games, often immersing myself in virtual worlds during my downtime. 
 I cherish spending time with friends, whether we're gaming together or exploring new places. 
