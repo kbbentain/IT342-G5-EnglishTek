@@ -1,45 +1,53 @@
-# Profile
+ # ENGLISHTEK
 
-## Team Members:
+![EnglishTek Logo](https://www.edarabia.com/wp-content/uploads/2016/06/the-english-kindergarten-tek-doha-qatar.jpg)
 
-KENJIE B. BENTAIN
-KENT DELOS CIENTOS
-STEVEN JAN TABUNGAR
+## PRODUCT DESCRIPTION:
 
-## Name: 
+```sh
+   EnglishTek is an innovative and interactive English language tutorial application designed specifically for children. 
+   This engaging platform provides young learners with a fun and effective way to develop their 
+   English language skills through a variety of interactive lessons and activities.
+```
 
-Steven Jan M. Tabungar 
+## List of Features:
+```sh
+Interactive Learning Modules: EnglishTek offers a range of lessons that cover essential language skills, including reading, writing, listening, and speaking. 
+                              Each module is designed to be engaging and age-appropriate, ensuring that children remain motivated and excited to learn.
 
-=======
+Gamified Experience: The application incorporates gamification elements, such as quizzes, challenges, and rewards, to enhance the learning experience. 
+                     This approach not only makes learning enjoyable but also encourages children to practice regularly and track their progress.
 
-KENT M. DELOS CIENTOS 
+Progress Tracking: EnglishTek provides tools for both students and educators to monitor learning progress. 
+                   Students can view their achievements and areas for improvement, while educators can access detailed reports to tailor their teaching strategies.
 
-=======
+User-Friendly Interface: Designed with children in mind, the application's interface is intuitive and easy to navigate. 
+                         Bright colors, engaging graphics, and simple controls make it accessible for young users.
 
-KENJIE B. BENTAIN
+Content Management for Educators: Educators have the ability to upload and manage educational content, ensuring that the materials remain current and relevant. 
+                                  This feature allows for a dynamic learning environment that adapts to the needs of students.
 
-## Course & Year: 
+EnglishTek is the perfect solution for parents and educators looking to provide children with a comprehensive and enjoyable English language learning experience. 
+With its focus on interactivity and engagement, EnglishTek empowers young learners to build a strong foundation in English while having fun along the way.
+```
 
-BSIT-3
+## LINKS:
 
-## Short Description About Myself:
+### FIGMA:
+```sh
+tentative figma
+```
 
+### ERD:
+```sh
+tentative erd
+```
 
-Hi, I'm Kenjie Bentain, a 3rd-year BSIT student currently living in Carmen, Toledo City. 
-I am kind in action but harsh in thinking. 
-I spend most of my time playing online games and listening to music. 
-Every Saturday, I practice my bass guitar skills. 
-My dream job is to become a Quality Assurance specialis.
+# DEVELOPERS PROFILE:
 
-=======
+## BENTAIN
 
-I'm a third-year college student with a passion for video games, often immersing myself in virtual worlds during my downtime. 
-I cherish spending time with friends, whether we're gaming together or exploring new places. 
-I also enjoy solo adventures, where I can unwind and discover new experiences on my own. Food is a major part of my life; 
-I love trying different cuisines and going on food trips to satisfy my culinary curiosity. 
-Balancing academics with my hobbies keeps me energized and excited about each day!
+## DELOSCIENTOS
 
-=======
-
-<h1>Hi, I am Kent M. Delos Cientos, BSIT 3rd Year, currently living and born here in Cebu City. Little about my self is that, I am approachable and friendly. I admire to be a Data Analyst or Web Developer, one day :D. Hobbies are games, reading, driving, reading, and listening to music. </h1>
+## TABUNGAR
 
