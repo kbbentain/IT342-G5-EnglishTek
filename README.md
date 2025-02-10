@@ -9,37 +9,31 @@
 
 ##List of Features:
 ```sh
-Interactive Learning Modules: EnglishTek offers a range of lessons that cover essential language skills, including reading, writing, listening, and speaking. Each module is designed to be engaging and age-appropriate, ensuring that children remain motivated and excited to learn.
-  ```
-```sh
-Gamified Experience: The application incorporates gamification elements, such as quizzes, challenges, and rewards, to enhance the learning experience. This approach not only makes learning enjoyable but also encourages children to practice regularly and track their progress.
-    ```
-```sh
-Progress Tracking: EnglishTek provides tools for both students and educators to monitor learning progress. Students can view their achievements and areas for improvement, while educators can access detailed reports to tailor their teaching strategies.
-  ```
-```sh
-User-Friendly Interface: Designed with children in mind, the application's interface is intuitive and easy to navigate. Bright colors, engaging graphics, and simple controls make it accessible for young users.
-    ```
-```sh
-Content Management for Educators: Educators have the ability to upload and manage educational content, ensuring that the materials remain current and relevant. This feature allows for a dynamic learning environment that adapts to the needs of students.
-    ```
-```sh
-EnglishTek is the perfect solution for parents and educators looking to provide children with a comprehensive and enjoyable English language learning experience. With its focus on interactivity and engagement, EnglishTek empowers young learners to build a strong foundation in English while having fun along the way.
+###Interactive Learning Modules: EnglishTek offers a range of lessons that cover essential language skills, including reading, writing, listening, and speaking. Each module is designed to be engaging and age-appropriate, ensuring that children remain motivated and excited to learn.
+
+###Gamified Experience: The application incorporates gamification elements, such as quizzes, challenges, and rewards, to enhance the learning experience. This approach not only makes learning enjoyable but also encourages children to practice regularly and track their progress.
+
+###Progress Tracking: EnglishTek provides tools for both students and educators to monitor learning progress. Students can view their achievements and areas for improvement, while educators can access detailed reports to tailor their teaching strategies.
+
+###User-Friendly Interface: Designed with children in mind, the application's interface is intuitive and easy to navigate. Bright colors, engaging graphics, and simple controls make it accessible for young users.
+
+###Content Management for Educators: Educators have the ability to upload and manage educational content, ensuring that the materials remain current and relevant. This feature allows for a dynamic learning environment that adapts to the needs of students.
+
+###EnglishTek is the perfect solution for parents and educators looking to provide children with a comprehensive and enjoyable English language learning experience. With its focus on interactivity and engagement, EnglishTek empowers young learners to build a strong foundation in English while having fun along the way.
     ```
 
 ##LINKS:
-```sh
+
 ###FIGMA:
 ```sh
 tentative figma
     ```
-```sh
+
 ###ERD:
     ```sh
 tentative erd
     ```
-    ```
-    ```
+
 #DEVELOPERS PROFILE:
 
 ##BENTAIN
