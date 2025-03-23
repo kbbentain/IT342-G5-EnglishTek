@@ -35,7 +35,7 @@ With its focus on interactivity and engagement, EnglishTek empowers young learne
 
 ### FIGMA:
 ```sh
-tentative figma
+https://www.figma.com/design/r3lWVcoQAmESQ2m58ODD0o/EnglishTek?node-id=0-1&t=hE7DKsoCdFY7EYCp-1
 ```
 
 ### ERD:
