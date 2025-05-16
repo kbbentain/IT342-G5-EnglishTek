@@ -1,0 +1,167 @@
+@startuml EnglishTek ER Diagram
+
+' Use skinparam to make the diagram more readable
+skinparam linetype ortho
+skinparam backgroundColor white
+skinparam classBackgroundColor lightblue
+skinparam classBorderColor black
+skinparam packageBackgroundColor white
+skinparam packageBorderColor gray
+
+' Entities
+entity "User" as user {
+  *id : Long <<PK>>
+  --
+  *username : String <<unique>>
+  *email : String <<unique>>
+  *password : String
+  *name : String
+  role : Role
+  avatar : String
+  bio : String
+  createdAt : LocalDateTime
+  lastLoginAt : LocalDateTime
+  accountNonExpired : boolean
+  accountNonLocked : boolean
+  credentialsNonExpired : boolean
+  enabled : boolean
+}
+
+enum "Role" as role {
+  USER
+  ADMIN
+}
+
+entity "Badge" as badge {
+  *id : Long <<PK>>
+  --
+  *name : String
+  *description : String
+  *iconUrl : String
+}
+
+entity "UserBadge" as userBadge {
+  *id : Long <<PK>>
+  --
+  *user_id : Long <<FK>>
+  *badge_id : Long <<FK>>
+  *dateObtained : LocalDateTime
+}
+
+entity "Chapter" as chapter {
+  *id : Long <<PK>>
+  --
+  icon : String
+  *title : String
+  *description : String
+}
+
+enum "ChapterStatus" as chapterStatus {
+  LOCKED
+  AVAILABLE
+  IN_PROGRESS
+  COMPLETED
+}
+
+entity "Feedback" as feedback {
+  *id : Long <<PK>>
+  --
+  *user_id : Long <<FK>>
+  *chapter_id : Long <<FK>>
+  *rating : Integer
+  feedbackText : String
+  feedbackKeyword : String
+  createdAt : LocalDateTime
+  updatedAt : LocalDateTime
+}
+
+entity "Lesson" as lesson {
+  *id : Long <<PK>>
+  --
+  *title : String
+  description : String
+  *chapter_id : Long <<FK>>
+  createdAt : LocalDateTime
+  order : Integer
+}
+
+entity "LessonContent" as lessonContent {
+  *lesson_id : Long <<FK>>
+  --
+  *content : String
+}
+
+entity "LessonAttempt" as lessonAttempt {
+  *id : Long <<PK>>
+  --
+  *user_id : Long <<FK>>
+  *lesson_id : Long <<FK>>
+  startedAt : LocalDateTime
+  completedAt : LocalDateTime
+}
+
+entity "Quiz" as quiz {
+  *id : Long <<PK>>
+  --
+  *title : String
+  description : String
+  *difficulty : Integer
+  *maxScore : Integer
+  *numberOfItems : Integer
+  *chapter_id : Long <<FK>>
+  badge_id : Long <<FK>>
+  createdAt : LocalDateTime
+  order : Integer
+  isRandom : Boolean
+}
+
+entity "QuizQuestion" as quizQuestion {
+  *id : Long <<PK>>
+  --
+  *page : Integer
+  *type : String
+  *title : String
+  *quiz_id : Long <<FK>>
+  correctAnswer : String
+}
+
+entity "QuizQuestionChoice" as quizQuestionChoice {
+  *question_id : Long <<FK>>
+  --
+  *choice : String
+}
+
+entity "QuizAttempt" as quizAttempt {
+  *id : Long <<PK>>
+  --
+  *user_id : Long <<FK>>
+  *quiz_id : Long <<FK>>
+  *score : Integer
+  startedAt : LocalDateTime
+  completedAt : LocalDateTime
+}
+
+' Relationships
+user "1" -- "*" userBadge : has >
+badge "1" -- "*" userBadge : awarded to >
+
+user "1" -- "*" feedback : gives >
+chapter "1" -- "*" feedback : receives >
+
+chapter "1" -- "*" lesson : contains >
+chapter "1" -- "*" quiz : contains >
+
+user "1" -- "*" lessonAttempt : attempts >
+lesson "1" -- "*" lessonAttempt : attempted by >
+
+user "1" -- "*" quizAttempt : attempts >
+quiz "1" -- "*" quizAttempt : attempted by >
+
+lesson "1" -- "*" lessonContent : has >
+
+quiz "1" -- "*" quizQuestion : contains >
+quizQuestion "1" -- "*" quizQuestionChoice : has >
+
+badge "1" -- "*" quiz : rewards >
+
+@enduml

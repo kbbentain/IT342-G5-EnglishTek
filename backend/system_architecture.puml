@@ -1,0 +1,168 @@
+@startuml EnglishTek System Architecture
+allowmixing
+!define RECTANGLE class
+!define DATABASE database
+!define DATABASE class
+
+skinparam componentStyle uml2
+skinparam linetype ortho
+skinparam backgroundColor white
+skinparam classBackgroundColor LightSkyBlue
+skinparam databaseBackgroundColor PaleGreen
+skinparam packageBackgroundColor LightYellow
+
+title EnglishTek Learning Management System - Architecture Diagram
+
+package "Frontend" {
+    RECTANGLE "Web Application" as WebApp {
+        + React.js
+    }
+}
+
+package "Backend (Spring Boot)" {
+    package "Controllers" {
+        RECTANGLE "AuthController" as AuthController
+        RECTANGLE "UserController" as UserController
+        RECTANGLE "ChapterController" as ChapterController
+        RECTANGLE "LessonController" as LessonController
+        RECTANGLE "QuizController" as QuizController
+        RECTANGLE "BadgeController" as BadgeController
+        RECTANGLE "FeedbackController" as FeedbackController
+        RECTANGLE "FileController" as FileController
+        RECTANGLE "ActivityLogController" as ActivityLogController
+        RECTANGLE "AdminDashboardController" as AdminDashboardController
+        RECTANGLE "ReportController" as ReportController
+    }
+    
+    package "Services" {
+        RECTANGLE "AuthService" as AuthService
+        RECTANGLE "UserService" as UserService
+        RECTANGLE "ChapterService" as ChapterService
+        RECTANGLE "LessonService" as LessonService
+        RECTANGLE "QuizService" as QuizService
+        RECTANGLE "BadgeService" as BadgeService
+        RECTANGLE "UserBadgeService" as UserBadgeService
+        RECTANGLE "FeedbackService" as FeedbackService
+        RECTANGLE "FileStorageService" as FileStorageService
+        RECTANGLE "ActivityLogService" as ActivityLogService
+        RECTANGLE "AdminDashboardService" as AdminDashboardService
+        RECTANGLE "ReportService" as ReportService
+    }
+    
+    package "Repositories" {
+        RECTANGLE "UserRepository" as UserRepository
+        RECTANGLE "ChapterRepository" as ChapterRepository
+        RECTANGLE "LessonRepository" as LessonRepository
+        RECTANGLE "LessonAttemptRepository" as LessonAttemptRepository
+        RECTANGLE "QuizRepository" as QuizRepository
+        RECTANGLE "QuizAttemptRepository" as QuizAttemptRepository
+        RECTANGLE "BadgeRepository" as BadgeRepository
+        RECTANGLE "UserBadgeRepository" as UserBadgeRepository
+        RECTANGLE "FeedbackRepository" as FeedbackRepository
+    }
+    
+    package "Security" {
+        RECTANGLE "SecurityConfig" as SecurityConfig
+        RECTANGLE "JwtTokenProvider" as JwtTokenProvider
+    }
+    
+    package "Configuration" {
+        RECTANGLE "ApplicationConfig" as ApplicationConfig
+        RECTANGLE "CorsConfig" as CorsConfig
+        RECTANGLE "FileStorageConfig" as FileStorageConfig
+    }
+}
+
+package "Data Layer" {
+    DATABASE "MySQL Database" as Database {
+        + User
+        + Chapter
+        + Lesson
+        + LessonAttempt
+        + Quiz
+        + QuizAttempt
+        + Badge
+        + UserBadge
+        + Feedback
+    }
+    
+    RECTANGLE "File Storage" as FileStorage {
+        + Learning Materials
+        + Uploaded Files
+    }
+}
+
+' Relationships
+WebApp --> AuthController : HTTP Requests
+WebApp --> UserController : HTTP Requests
+WebApp --> ChapterController : HTTP Requests
+WebApp --> LessonController : HTTP Requests
+WebApp --> QuizController : HTTP Requests
+WebApp --> BadgeController : HTTP Requests
+WebApp --> FeedbackController : HTTP Requests
+WebApp --> FileController : HTTP Requests
+
+' Auth Flow
+AuthController --> AuthService
+AuthService --> UserRepository
+AuthService --> JwtTokenProvider
+
+' User Management Flow
+UserController --> UserService
+UserService --> UserRepository
+
+' Chapter Management Flow
+ChapterController --> ChapterService
+ChapterService --> ChapterRepository
+
+' Lesson Management Flow
+LessonController --> LessonService
+LessonService --> LessonRepository
+LessonService --> LessonAttemptRepository
+
+' Quiz Management Flow
+QuizController --> QuizService
+QuizService --> QuizRepository
+QuizService --> QuizAttemptRepository
+
+' Badge Management Flow
+BadgeController --> BadgeService
+BadgeService --> BadgeRepository
+BadgeController --> UserBadgeService
+UserBadgeService --> UserBadgeRepository
+
+' Feedback Flow
+FeedbackController --> FeedbackService
+FeedbackService --> FeedbackRepository
+
+' File Management Flow
+FileController --> FileStorageService
+FileStorageService --> FileStorage
+
+' Admin Dashboard Flow
+AdminDashboardController --> AdminDashboardService
+AdminDashboardService --> UserRepository
+AdminDashboardService --> ChapterRepository
+AdminDashboardService --> QuizAttemptRepository
+
+' Activity Logging Flow
+ActivityLogController --> ActivityLogService
+
+' Report Flow
+ReportController --> ReportService
+ReportService --> UserRepository
+ReportService --> QuizAttemptRepository
+ReportService --> LessonAttemptRepository
+
+' Database Connections
+UserRepository --> Database
+ChapterRepository --> Database
+LessonRepository --> Database
+LessonAttemptRepository --> Database
+QuizRepository --> Database
+QuizAttemptRepository --> Database
+BadgeRepository --> Database
+UserBadgeRepository --> Database
+FeedbackRepository --> Database
+
+@enduml
