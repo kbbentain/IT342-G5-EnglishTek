@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EnglishTek-Mobile</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Welcome to EnglishTek!</string>
+    <string name="welcome_subtitle">Embark on an exciting journey to master English with an adventuristic learning experience.</string>
+    <string name="start_journey_button">Start Your Journey</string>
+    <string name="already_have_account">Already have an account? Sign in</string>
+    <string name="welcome_image_description">Welcome illustration</string>
+</resources>
