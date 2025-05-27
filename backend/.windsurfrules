@@ -1,0 +1,8 @@
+1. Read the reference.txt always for reference
+2. Double check each Service with each other so you're not hallucinating methods
+3. This project is in Gradle
+4. This project uses Spring Boot
+5. This project uses MySQL
+6. This project uses JWT
+7. Keep in mind that this is a learning management system
+8. Make sure you're not making up any table names

@@ -1,0 +1,213 @@
+Environment variables:
+SQL: sql://192.168.193.73:8877/englishtek
+Username: root
+Password: example
+
+-- User Model --
+- id
+- username
+- email
+- password
+- name
+- role (user / admin)
+- avatar
+- badges: []
+
+@Public
++ /login
++ /register
+
+@RequiresUser
++ /me
+
+@RequiresAdmin
++ /register-admin
+
+-- Chapter Model --
+- id(PK)
+- icon
+- title
+- description
+
+@RequiresUser
++ /get-all-chapters
++ /get-chapter/{id}
+
+@RequiresAdmin
++ /create-chapter
++ /update-chapter
++ /delete-chapter/{id}
+
+Layout for /getchapter:
+{
+    id
+    icon
+    title
+    description
+    order:  {
+            lesson: 1,
+            lesson: 2,
+            quiz: 1,
+            lesson: 4,
+            lesson: 5,
+            quiz:2
+        }
+}
+
+Layout for /getallchapters:
+[
+    {
+        id,
+        icon,
+        title
+    },
+    {
+        id,
+        icon,
+        title
+    }
+]
+
+-- Lesson Model --
+- chapter_id(FK)
+- id(PK)
+- title
+- content:
+    {
+        "page",
+        "title",
+        "text",
+        "images": []
+    }
+
+@RequiresUser
++ /start-lesson/{id}
++ /finish-lesson/{id} (logs LessonAttempt)
+
+@RequiresAdmin
++ /create-lesson
++ /update-lesson
++ /delete-lesson/{id}
+
+-- LessonAttempt Model --
+- id(PK)
+- lesson_id(FK)
+- user_id(FK)
+
+-- Quiz Model --
+- chapter_id(FK)
+- id(PK)
+- title
+- difficulty (1 = easy, 2 = medium, 3 = hard)
+- max_score (Passing score 80%)
+- number_of_items
+- badge_id
+- content:
+    [
+        {
+            "page",
+            "type" (multiple_choice or identification),
+            "title",
+            "choices":
+                {
+                    "true",
+                    "false"
+                }
+        },
+    ]
+
+@RequiresUser
++ /get-quiz/{id}
++ /start-quiz/{id} (allows multiple attempts, overwrite QuizAttempt)
++ /submit-quiz
+
+@RequiresAdmin
++ /create-quiz
++ /update-quiz
++ /delete-quiz/{id}
+
+-- QuizAttempt Model --
+- id(PK)
+- quiz_id(FK)
+- user_id(FK)
+- score
+
+Sample JSON for Multiple Choice
+[
+    {
+        "page": 1,
+        "type": "multiple_choice",
+        "title": "Which of the following are types of networks?",
+        "choices": [
+            "LAN",
+            "WAN",
+            "MAN",
+            "SAN"
+        ],
+        "correct_answer": [
+            "LAN",
+            "WAN",
+            "MAN",
+        ]
+    }
+]
+
+Sample JSON for Identification
+[
+    {
+        "page": 1,
+        "type": "multiple_choice",
+        "title": "Which of the following is not a type of network?",
+        "choices": [
+            "LAN",
+            "WAN",
+            "MAN",
+            "SAN"
+        ],
+        "correct_answer": "SAN"
+    }
+]
+
+Sample JSON for /submit-quiz request
+{
+    "score": 7
+}
+
+/submit-quiz should also add the badge to User if score is perfect
+
+Sample JSON for /submit-quiz response
+{
+    "score": 7,
+    "max_score": 20,
+    "is_eligible_for_retake": true (false if score is 80% or higher than max_score)
+    "is_eligible_for_badge": false,
+    badge: {
+        id: 1,
+        title: "Kakupalan",
+        icon: "something.png"
+    }
+}
+
+/submit-quiz should also add the badge to User if score is perfect
+
+-- Badge Model --
+- id(PK)
+- title
+- icon
+
+@RequiresUser
++ /get-obtained-badges
++ /add-badge/{id}
+
+@RequiresAdmin
++ /create-badge
+
+Layout for /returnallbadges:
+[
+    {
+        id,
+        title,
+        icon,
+        is_obtained
+    }
+]

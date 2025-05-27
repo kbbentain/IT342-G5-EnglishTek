@@ -6,6 +6,15 @@ plugins {
 android {
     namespace = "com.example.englishtek_mobile"
     compileSdk = 35
+    
+    signingConfigs {
+        create("release") {
+            storeFile = file("${rootProject.projectDir}/app/englishtek.keystore")
+            storePassword = "kbbentain"
+            keyAlias = "englishtek"
+            keyPassword = "kbbentain"
+        }
+    }
 
     defaultConfig {
         applicationId = "com.example.englishtek_mobile"
@@ -28,6 +37,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
             
             // Production API settings
             buildConfigField("String", "API_BASE_URL", "\"https://api-englishtek.aetherrflare.org\"")
